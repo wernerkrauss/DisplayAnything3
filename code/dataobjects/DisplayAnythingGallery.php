@@ -499,7 +499,6 @@ class DisplayAnythingGallery extends DataObject {
 	 */
 	protected function CleanFileName($name) {
 		$filter = Object::create('FileNameFilter');
-		$filter::$default_use_transliterator = false;
 		return $filter->filter($name);
 	}
 	
