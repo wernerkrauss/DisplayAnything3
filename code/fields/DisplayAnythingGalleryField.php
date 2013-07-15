@@ -183,8 +183,7 @@ class DisplayAnythingGalleryField extends FormField {
 			"",
 			DataObject::get('DisplayAnythingGalleryUsage')->map('ID','TitleMap'),
 			$gallery->getField('UsageID'),
-			NULL,
-			'Add new'
+			NULL
 		);
 		$picker->addExtraClass('usage_picker');
 		

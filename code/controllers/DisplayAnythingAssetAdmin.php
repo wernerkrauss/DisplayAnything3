@@ -6,9 +6,8 @@ class DisplayAnythingAssetAdmin extends Controller {
 
 	private $gallery_item, $gallery;
 	
-	public static $url_handlers = array(
-		'$Action/$ID/field/$OtherID' => 'FieldAction',//specific field actions on the EditForm
-	);
+	
+	private static $url_rule = '/$Action/$ID/field/$OtherID';
 	
 	public function __construct() {
 		parent::__construct();

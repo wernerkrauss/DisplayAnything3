@@ -1,0 +1,7 @@
+---
+Name: display_anything
+After: 'framework/*','cms/*', 'mysite/*'
+---
+Director:
+  rules:
+    'admin/da//$Action//$ID//$OtherID': 'DisplayAnythingAssetAdmin'
