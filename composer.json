@@ -1,0 +1,13 @@
+{
+  "name": "benrwhite/DisplayAnything3",
+  "type": "silverstripe-module",
+  "keywords": ["silverstripe", "displayanything", "display"],
+  "license": "Custom",
+  "authors": [
+  {
+    "name": "Codem",
+  },
+  {
+    "name": "Nivanka Fonseka",
+  },
+}
