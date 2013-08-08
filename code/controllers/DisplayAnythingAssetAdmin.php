@@ -8,6 +8,15 @@ class DisplayAnythingAssetAdmin extends Controller {
 	
 	
 	private static $url_rule = '/$Action/$ID/field/$OtherID';
+
+	private static $allowed_actions = array(
+		'DeleteFile',
+		'EditFile',
+		'ReloadList',
+		'SortItem',
+		'Upload'
+	);
+
 	
 	public function __construct() {
 		parent::__construct();
@@ -198,4 +207,3 @@ class DisplayAnythingAssetAdmin extends Controller {
 	}
 
 }
-?>
