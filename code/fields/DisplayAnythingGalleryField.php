@@ -80,7 +80,7 @@ class DisplayAnythingGalleryField extends FormField {
 	 * @returns array
 	 * @throws Exception
 	 */
-	final private function GetAllowedExtensions() {
+	final public function GetAllowedExtensions() {
 		$types = $this->gallery->GetAllowedFileTypes();
 		if(empty($types)) {
 			throw new Exception("No allowed file types have been defined for this uploader.");
