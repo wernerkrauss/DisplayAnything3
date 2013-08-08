@@ -667,6 +667,56 @@ class DisplayAnythingGallery extends DataObject {
 		//trigger a JSON return value
 		return $this->UploadResult();
 	}
+
+	/**
+	 * @param string $resize_method
+	 */
+	public function setResizeMethod($resize_method) {
+		$this->resize_method = $resize_method;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getResizeMethod() {
+		return $this->resize_method;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getTargetLocation() {
+		return $this->target_location;
+	}
+
+	/**
+	 * @param int $thumb_height
+	 */
+	public function setThumbHeight($thumb_height) {
+		$this->thumb_height = $thumb_height;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getThumbHeight() {
+		return $this->thumb_height;
+	}
+
+	/**
+	 * @param int $thumb_width
+	 */
+	public function setThumbWidth($thumb_width) {
+		$this->thumb_width = $thumb_width;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getThumbWidth() {
+		return $this->thumb_width;
+	}
 	
 	
 }
