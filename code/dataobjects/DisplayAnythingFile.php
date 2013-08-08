@@ -467,7 +467,48 @@ class DisplayAnythingFile extends File {
 		
 		return $fields;
 	}
-	
+
+	public function getFrontEndFields($param = null){
+
+		$fields = FieldList::create();
+
+		$path = Controller::join_links(BASE_URL, $this->Filename);
+
+		$meta = $this->GetMeta();
+
+		$thumbnail = $this->Thumbnail('SetWidth', 400);
+		if(empty($thumbnail)) {
+			$thumbnail = self::GetFileIcon();
+		}
+
+		$warning = "";
+		if(!$meta['exists']) {
+			$warning = "<p>This file does not exist, it may have been deleted.</p>";
+		}
+
+		$fields->push(
+				//and some meta
+				new LiteralField(
+					'FileMetaData',
+					"{$warning}
+					<table class=\"file_meta\">
+						<tbody>
+							<tr><th>Name</th><td>{$meta['name']}</td></tr>
+							<tr><th>Size</th><td>{$meta['size']}</td></tr>
+							" . ($meta['image'] ? "<tr><th>Dimensions (WxH)</th><td>{$meta['width']} x {$meta['height']}</td></tr>" : "") . "
+							<tr><th>Type</th><td>{$meta['mimetype']}</td></tr>
+							" . ($meta['image'] ? "<tr><th>Thumbnail</th><td><div class=\"f\">{$thumbnail}</div></td></tr>" : "") . "
+						</tbody>
+					</table>"
+				)
+		);
+		$fields->push(new TextField('Caption', 'Caption', $this->Caption));
+		$fields->push(new TextareaField('Description', 'Description', $this->Description));
+
+
+		return $fields;
+	}
+
 	/**
 	 * GetFileIcon()
 	 * @returns string
