@@ -132,7 +132,7 @@ class DisplayAnythingGallery extends DataObject {
 			if($tag) {
 				$thumb = $tag;
 			} else {
-				$thumb = "<img src=\"" . SAPPHIRE_DIR . "/images/app_icons/image_32.gif\" width=\"24\" height=\"32\" alt=\"unknown image\" /><br />(no thumbnail)";
+				$thumb = "<img src=\"" . FRAMEWORK_DIR . "/images/app_icons/image_32.gif\" width=\"24\" height=\"32\" alt=\"unknown image\" /><br />(no thumbnail)";
 			}
 		} else {
 			//TODO: get a nice file icon...
