@@ -126,13 +126,7 @@ class DisplayAnythingGalleryField extends FormField {
 	}
 	
 	protected function FieldHelp() {
-		return "<div class=\"help help-under\"><div class=\"inner\">"
-					. " <h4>Upload help</h4><ul>"
-					. " <li><strong>Chrome</strong>, <strong>Safari</strong> and <strong>Firefox</strong> support multiple image upload (Hint: 'Ctrl/Cmd + click' to select multiple images in your file chooser)</li>"
-					. "<li>In <strong>Firefox</strong>, <strong>Safari</strong> and <strong>Chrome</strong> you can drag and drop images onto the upload button</li>"
-					. "<li>Internet Explorer <= 9 does not support multiple file uploads or drag and drop of files. Click the 'Upload a file' button to choose a file.</li>"
-					. "</ul>"
-					. "</div></div>";
+		return $this->renderWith('DisplayAnythingGalleryField_help');
 	}
 	
 	/**
@@ -147,7 +141,9 @@ class DisplayAnythingGalleryField extends FormField {
 			$html .= "<p>No 'id' attribute was specified for the file upload field. File uploads cannot take place until you or your developer provides this information.</p>";
 		} else {
 			//set up the upload
-			$html .= "<div class=\"uploader-upload-box field\"  id=\"{$id}\" rel=\"{$this->GetUploaderConfiguration()}\">Loading uploader...</div>";
+			$html .= "<div class=\"uploader-upload-box field\"  id=\"{$id}\" rel=\"{$this->GetUploaderConfiguration()}\">"
+				. _t('DisplayAnythingGalleryField.LOADINGUPLOADER','Loading uploader')
+				. "...</div>";
 		}
 		return $html;
 	}
@@ -214,9 +210,15 @@ class DisplayAnythingGalleryField extends FormField {
 			$reload = DisplayAnythingAssetAdmin::AdminLink('ReloadList', $gallery->ID);
 			$resort = DisplayAnythingAssetAdmin::AdminLink('SortItem', $gallery->ID);
 			
-			$Title = (!empty($gallery->Title) ? $gallery->Title : "Un-named gallery");
-			$Description = (!empty($gallery->Title) ? $gallery->Description : "No description provided");
-			$Visible = $gallery->Visible == 1 ? "public" : "private";
+			$Title = !empty($gallery->Title)
+				? $gallery->Title
+				: _t('DisplayAnythingGalleryField.UNNAMED','Un-named gallery');
+			$Description = !empty($gallery->Title)
+				? $gallery->Description
+				: _t('DisplayAnythingGalleryField.NODESCRIPTION','No description provided');
+			$Visible = $gallery->Visible == 1
+				? _t('DisplayAnythingGalleryField.PUBLIC','public')
+				: _t('DisplayAnythingGalleryField.PRIVATE','private');
 			$Message = $this->XML_val('Message');
 			$MessageType = $this->XML_val('MessageType');
 			$RightTitle = $this->XML_val('RightTitle');
@@ -224,15 +226,23 @@ class DisplayAnythingGalleryField extends FormField {
 			$extraClass = $this->extraClass;
 			$Name = $this->XML_val('Name');
 			$Field = $this->XML_val('Field');
-			
+
 			// Only of the the following titles should apply
 			$titleBlock = "<div class=\"help\"><div class=\"inner\">";
 			$titleBlock .= "<h4>" . htmlentities($Title, ENT_QUOTES, 'UTF-8') . " <span>(" . $Visible  . ")</span></h4>";
 			$titleBlock .= ($Description ? "<p>" . htmlentities($Description, ENT_QUOTES, 'UTF-8') . "</p>" : "");
 			$titleBlock .= "<label class=\"left\" for=\"{$this->id()}\">";
-			$titleBlock .= "<ul><li><a href=\"{$reload}\" class=\"reload reload-all\">Reload</a><a class=\"sortlink\" href=\"{$resort}\">sort</a></li>";
-			$titleBlock .= "<li><span><strong>Max. file size:</strong> " . round($gallery->GetMaxSize() / 1024 / 1024, 2) . "Mb</span></li>";
-			$titleBlock .= "<li><span><strong>File types:</strong> " . implode(", ", $this->GetAllowedExtensions()) . "</span></li></ul>";
+			$titleBlock .= "<ul><li><a href=\"{$reload}\" class=\"reload reload-all\"> "
+				. _t('DisplayAnythingGalleryField.RELOAD','Reload')
+				. "</a><a class=\"sortlink\" href=\"{$resort}\">"
+				. _t('DisplayAnythingGalleryField.SORT','sort')
+				. "</a></li>";
+			$titleBlock .= "<li><span><strong>"
+				. _t('DisplayAnythingGalleryField.MAXFILESIZE','Max. file size')
+				. ":</strong> " . round($gallery->GetMaxSize() / 1024 / 1024, 2) . "Mb</span></li>";
+			$titleBlock .= "<li><span><strong>"
+				. _t('DisplayAnythingGalleryField.FILETYPES','File types')
+				. ":</strong> " . implode(", ", $this->GetAllowedExtensions()) . "</span></li></ul>";
 			$titleBlock .= "</label></div></div>";
 			
 			// $MessageType is also used in {@link extraClass()} with a "holder-" prefix
@@ -252,7 +262,9 @@ class DisplayAnythingGalleryField extends FormField {
 </div>
 HTML;
 		} else {
-			$html .= "<div class=\"message notice\"><p>Gallery items can be uploaded after the gallery is saved for the first time</p></div>";
+			$html .= "<div class=\"message notice\"><p>"
+				. _t('DisplayAnythingGalleryField.UPLOADAFTERFIRSTSAVE' . 'Gallery items can be uploaded after the gallery is saved for the first time ')
+				. "</p></div>";
 		}
 		$html .= "</div>";
 		
@@ -343,7 +355,11 @@ HTML;
 		Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
 		Requirements::javascript(THIRDPARTY_DIR."/jquery-ui/jquery-ui.min.js");
 		Requirements::block(THIRDPARTY_DIR . "/firebug-lite/firebugx.js");//block this out, the little bastard
-		
+
+		//i18n
+		Requirements::javascript(FRAMEWORK_DIR . "/javascript/i18n.js");
+		Requirements::add_i18n_javascript('display_anything/javascript/lang');
+
 		Requirements::javascript("display_anything/javascript/file-uploader/client/fileuploader.js");
 		Requirements::javascript("display_anything/javascript/display.js");
 
