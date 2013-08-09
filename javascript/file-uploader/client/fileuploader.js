@@ -269,12 +269,11 @@ qq.FileUploaderBasic = function(o){
         onCancel: function(id, fileName){},
         // messages                
         messages: {
-            typeError: "{file} has invalid extension. Only {extensions} are allowed.",
-            sizeError: "{file} is too large, maximum file size is {sizeLimit}.",
-            minSizeError: "{file} is too small, minimum file size is {minSizeLimit}.",
-            emptyError: "{file} is empty, please select files again without it.",
-            onLeave: "The files are being uploaded, if you leave now the upload will be cancelled."            
-        },
+            typeError: ss.i18n._t('FileUploader.typeError'),
+            sizeError: ss.i18n._t('FileUploader.sizeError'),
+            minSizeError: ss.i18n._t('FileUploader.minSizeError'),
+            emptyError: ss.i18n._t('FileUploader.emptyError'),
+            onLeave: ss.i18n._t('FileUploader.onLeave')          },
         showMessage: function(message){
             alert(message);
         }               
@@ -485,8 +484,8 @@ qq.FileUploader = function(o){
         listElement: null,
                 
         template: '<div class="qq-uploader">' + 
-                '<div class="qq-upload-drop-area"><span>Drop files here to upload</span></div>' +
-                '<div class="qq-upload-button">Upload a file</div>' +
+                '<div class="qq-upload-drop-area"><span>' + ss.i18n._t('FileUploader.DropFilesHere') + '</span></div>' +
+                '<div class="qq-upload-button">' + ss.i18n._t('FileUploader.UploadFile') + '</div>' +
                 '<ul class="qq-upload-list"></ul>' + 
              '</div>',
 
@@ -495,8 +494,8 @@ qq.FileUploader = function(o){
                 '<span class="qq-upload-file"></span>' +
                 '<span class="qq-upload-spinner"></span>' +
                 '<span class="qq-upload-size"></span>' +
-                '<a class="qq-upload-cancel" href="#">Cancel</a>' +
-                '<span class="qq-upload-failed-text">Failed</span>' +
+                '<a class="qq-upload-cancel" href="#">' + ss.i18n._t('FileUploader.Cancel') + '</a>' +
+                '<span class="qq-upload-failed-text">' + ss.i18n._t('FileUploader.Failed') + '</span>' +
             '</li>',        
         
         classes: {
@@ -542,7 +541,7 @@ qq.extend(qq.FileUploader.prototype, {
     _find: function(parent, type){                                
         var element = qq.getByClass(parent, this._options.classes[type])[0];        
         if (!element){
-            throw new Error('element not found ' + type);
+            throw new Error(ss.i18n._t('FileUploader.ElementNotFound') + type);
         }
         
         return element;
@@ -996,7 +995,7 @@ qq.extend(qq.UploadHandlerForm.prototype, {
         var input = this._inputs[id];
         
         if (!input){
-            throw new Error('file with passed id was not added, or already uploaded or cancelled');
+            throw new Error(ss.i18n._t('FileUploader.FileNotAdded'));
         }                
 
         var fileName = this.getName(id);
