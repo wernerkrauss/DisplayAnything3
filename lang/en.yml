@@ -1,0 +1,43 @@
+en:
+  DisplayAnythingFile:
+    PLURALNAME: Files
+    SINGULARNAME: File
+    CAPTION: Caption
+    DESCRIPTION: Description
+    DIMENSIONS: 'Dimensions (WxH)'
+    FILEDOESNTEXIST: 'This file does not exist, it may have been deleted.'
+    NAME: Name
+    SIZE: Size
+    THUMBNAIL: Thumbnail
+    TYPE: Type
+  DisplayAnythingGallery:
+    PLURALNAME: 'Display Anything Galleries'
+    SINGULARNAME: 'Display Anything Gallery'
+  DisplayAnythingGalleryField:
+    FILETYPES: 'File types'
+    LOADINGUPLOADER: 'Loading uploader'
+    MAXFILESIZE: 'Max. file size'
+    NODESCRIPTION: 'No description provided'
+    PRIVATE: private
+    PUBLIC: public
+    RELOAD: Reload
+    SORT: sort
+    UNNAMED: 'Un-named gallery'
+  DisplayAnythingGalleryField_help_ss:
+    DRAGDROP: 'In <strong>Firefox</strong>, <strong>Safari</strong> and <strong>Chrome</strong> you can drag and drop images onto the upload button'
+    IELT9: 'Internet Explorer <= 9 does not support multiple file uploads or drag and drop of files. Click the ''Upload a file'' button to choose a file.'
+    MULSTIPLE: '<strong>Chrome</strong>, <strong>Safari</strong> and <strong>Firefox</strong> support multiple image upload (Hint: ''Ctrl/Cmd + click'' to select multiple images in your file chooser)'
+  DisplayAnythingGalleryUsage:
+    PLURALNAME: 'Display Anything Gallery Usags'
+    SINGULARNAME: 'Display Anything Gallery Usage'
+  DisplayAnythingYouTubeGallery:
+    PLURALNAME: 'Display Anything You Tube Galleries'
+    SINGULARNAME: 'Display Anything You Tube Gallery'
+  DisplayAnythingYouTubeVideoFile:
+    PLURALNAME: Files
+    SINGULARNAME: File
+  UploadField:
+    DOEDIT: Save
+  WatermarkedImage:
+    PLURALNAME: Files
+    SINGULARNAME: File

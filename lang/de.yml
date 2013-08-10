@@ -1,0 +1,29 @@
+de:
+  DisplayAnythingFile:
+    PLURALNAME: Dateien
+    SINGULARNAME: Datei
+    CAPTION: 'Überschrift'
+    DESCRIPTION: Beschreibung
+    DIMENSIONS: 'Größe (BxH)'
+    FILEDOESNTEXIST: 'Das Bild wurde möglicherweise gelöscht'
+    NAME: Name
+    SIZE: 'Dateigröße'
+    THUMBNAIL: Thumbnail
+    TYPE: Typ
+  DisplayAnythingGallery:
+    PLURALNAME: 'Bildergalerien'
+    SINGULARNAME: 'Bildergalerie'
+  DisplayAnythingGalleryField:
+    FILETYPES: 'Dateitypen'
+    LOADINGUPLOADER: 'Lade...'
+    MAXFILESIZE: 'Max. Dateigröße'
+    NODESCRIPTION: 'Keine Beschreibung angegeben'
+    PRIVATE: privat
+    PUBLIC: 'öffentlich'
+    RELOAD: 'Neu laden'
+    SORT: sortieren
+    UNNAMED: 'Namenlose Galerie'
+  DisplayAnythingGalleryField_help_ss:
+    DRAGDROP: 'Im <strong>Firefox</strong>, <strong>Safari</strong> und <strong>Chrome</strong> können Sie die Bilder auf die Fläche "Datei hochladen" ziehen.'
+    IELT9: 'Der Internet Explorer <= 9 unterstützt kein "Drag & Drop". Klicken Sie die auf die Schaltfläche "Datei hocladen" einzelne Dateien hochzuladen.'
+    MULSTIPLE: 'In <strong>Chrome</strong>, <strong>Safari</strong> und <strong>Firefox</strong> können Sie auch mehrere Bilder gleichzeitig hochladen (Tipp: ''Strg/Cmd + klick'' um mehrere Dateien auszuwählen)'

@@ -483,7 +483,7 @@ class DisplayAnythingFile extends File {
 
 		$warning = "";
 		if(!$meta['exists']) {
-			$warning = "<p>This file does not exist, it may have been deleted.</p>";
+			$warning = '<p>' . _t('DisplayAnythingFile.FILEDOESNTEXIST', 'This file does not exist, it may have been deleted.') . '</p>';
 		}
 
 		$fields->push(
@@ -493,17 +493,17 @@ class DisplayAnythingFile extends File {
 					"{$warning}
 					<table class=\"file_meta\">
 						<tbody>
-							<tr><th>Name</th><td>{$meta['name']}</td></tr>
-							<tr><th>Size</th><td>{$meta['size']}</td></tr>
-							" . ($meta['image'] ? "<tr><th>Dimensions (WxH)</th><td>{$meta['width']} x {$meta['height']}</td></tr>" : "") . "
-							<tr><th>Type</th><td>{$meta['mimetype']}</td></tr>
-							" . ($meta['image'] ? "<tr><th>Thumbnail</th><td><div class=\"f\">{$thumbnail}</div></td></tr>" : "") . "
+							<tr><th>" . _t('DisplayAnythingFile.NAME', 'Name') . "</th><td>{$meta['name']}</td></tr>
+							<tr><th>" . _t('DisplayAnythingFile.SIZE', 'Size') . "</th><td>{$meta['size']}</td></tr>
+							" . ($meta['image'] ? '<tr><th>' . _t('DisplayAnythingFile.DIMENSIONS', 'Dimensions (WxH)') . "</th><td>{$meta['width']} x {$meta['height']}</td></tr>" : "") . "
+							<tr><th>" . _t('DisplayAnythingFile.TYPE', 'Type') . "</th><td>{$meta['mimetype']}</td></tr>
+							" . ($meta['image'] ? "<tr><th>" . _t('DisplayAnythingFile.THUMBNAIL', 'Thumbnail') . "</th><td><div class=\"f\">{$thumbnail}</div></td></tr>" : "") . "
 						</tbody>
 					</table>"
 				)
 		);
-		$fields->push(new TextField('Caption', 'Caption', $this->Caption));
-		$fields->push(new TextareaField('Description', 'Description', $this->Description));
+		$fields->push(new TextField('Caption', _t('DisplayAnythingFile.CAPTION', 'Caption'), $this->Caption));
+		$fields->push(new TextareaField('Description', _t('DisplayAnythingFile.DESCRIPTION', 'Description'), $this->Description));
 
 
 		return $fields;
