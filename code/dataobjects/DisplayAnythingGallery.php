@@ -56,7 +56,20 @@ class DisplayAnythingGallery extends DataObject {
 	 */
 	public function OrderedGalleryItems($only_visible = 1, $limit = NULL) {
 		if(($only_visible && $this->Visible == 1) || !$only_visible) {
-			return DataObject::get('DisplayAnythingFile','GalleryID=' . $this->ID, '"DisplayAnythingFile"."Sort" ASC, "File"."Created" DESC', '', $limit);
+
+			$filter = array(
+				'GalleryID' => $this->ID
+			);
+			$sort = array(
+				'Sort' => 'ASC',
+				'Created' => 'DESC'
+			);
+			$ret = DisplayAnythingFile::get()
+				->filter($filter)
+				->sort($sort)
+				->limit($limit);
+
+			return $ret;
 		}
 		return FALSE;
 	}

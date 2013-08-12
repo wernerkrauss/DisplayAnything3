@@ -519,4 +519,3 @@ class DisplayAnythingFile extends File {
 	}
 	
 }
-?>
