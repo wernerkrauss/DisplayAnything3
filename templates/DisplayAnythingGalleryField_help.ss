@@ -1,6 +1,6 @@
 <div class="help help-under">
 	<div class="inner">
- 	<h4>Upload help</h4>
+ 	<h4><%t DisplayAnythingGalleryField_help_ss.HELPTITLE "Upload help" %></h4>
 		<ul>
 			<li>
 				<%t DisplayAnythingGalleryField_help_ss.MULSTIPLE "<strong>Chrome</strong>, <strong>Safari</strong> and <strong>Firefox</strong> support multiple image upload (Hint: 'Ctrl/Cmd + click' to select multiple images in your file chooser)" %>
