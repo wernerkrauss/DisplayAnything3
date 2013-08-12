@@ -24,6 +24,7 @@ de:
     SORT: sortieren
     UNNAMED: 'Namenlose Galerie'
   DisplayAnythingGalleryField_help_ss:
+    HELPTITLE: 'Hilfe zum Hochladen'
     DRAGDROP: 'Im <strong>Firefox</strong>, <strong>Safari</strong> und <strong>Chrome</strong> können Sie die Bilder auf die Fläche "Datei hochladen" ziehen.'
     IELT9: 'Der Internet Explorer <= 9 unterstützt kein "Drag & Drop". Klicken Sie die auf die Schaltfläche "Datei hocladen" einzelne Dateien hochzuladen.'
     MULSTIPLE: 'In <strong>Chrome</strong>, <strong>Safari</strong> und <strong>Firefox</strong> können Sie auch mehrere Bilder gleichzeitig hochladen (Tipp: ''Strg/Cmd + klick'' um mehrere Dateien auszuwählen)'
