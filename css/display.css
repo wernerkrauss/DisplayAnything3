@@ -93,20 +93,21 @@ form .file-uploader .help h4 {
 .file-uploader .tools a {
 	display : inline-block;
 	vertical-align : middle;
-	width : 16px;
-	height : 16px;
-	margin : 0 3px 0 0;
+	width : 14px;
+	height : 14px;
+/*	margin : 0 3px 0 0;*/
 }
 
 .file-uploader-list .file-uploader-item .tools .sortlink {
 	float : right;
+    margin-top: 4px;
 }
-
+/*
 .file-uploader-list .file-uploader-item .tools img {
 	display : inline;
 	vertical-align : middle;
 }
-
+*/
 .file-uploader a.reload {
 	padding : 3px 20px 3px 0px;
 	vertical-align : top;
